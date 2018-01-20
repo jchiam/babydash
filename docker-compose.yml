@@ -4,7 +4,20 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    environment:
+      - VIRTUAL_HOST=babydash.jonchiam.com
+      - VIRTUAL_PORT=4000
+      - LETSENCRYPT_HOST=babydash.jonchiam.com
+      - LETSENCRYPT_EMAIL=jczjchiam@gmail.com
     container_name: babydash
     ports:
       - "4000:4000"
+    expose:
+      - "4000"
     restart: always
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
