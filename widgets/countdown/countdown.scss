@@ -1,0 +1,39 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #ec663c;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+.widget-countdown {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+    font-size: 52px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .value {
+    flex: 1;
+    text-align: right;
+    margin-right: 5px;
+  }
+
+  .descriptor {
+    flex: 1;
+    text-align: left;
+    margin-left: 5px;
+  }
+}

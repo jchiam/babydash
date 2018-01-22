@@ -8,7 +8,7 @@ const placeholder = '/assets/images/placeholder.png';
 class Image extends Widget {
   image() {
     return {
-      backgroundImage: `url(${this.state.image || placeholder})`
+      backgroundImage: `url(${this.props.image || placeholder})`
     };
   }
   render() {
