@@ -1,0 +1,13 @@
+rules:
+  property-sort-order:
+    - 1
+    -
+      order: concentric
+      ignore_unspecified: false
+      min_properties: 2
+      separate_groups: false
+      nesting-depth:
+        - 1
+        -
+          max_depth: 5
+          ignore_parent_selectors: true
