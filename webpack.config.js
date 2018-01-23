@@ -39,7 +39,7 @@ const common = {
     loaders: [
       { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
       { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.jsx?$/, loaders: ['babel-loader?cacheDirectory'] },
+      { test: /\.jsx?$/, loaders: ['babel-loader?cacheDirectory&compact=false'] },
       {
         test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/,
         loader: 'url-loader?limit=1000&name=images/[name].[ext]'
