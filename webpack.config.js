@@ -21,8 +21,11 @@ const common = {
     widgets: PATHS.widgets
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', 'css', 'scss'],
-    modulesDirectories: ['node_modules', PATHS.gridster],
+    extensions: ['.js', '.jsx', 'css', 'scss'],
+    modules: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, PATHS.gridster)
+    ],
     alias: {
       d3: PATHS.d3
     }
@@ -34,28 +37,28 @@ const common = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loaders: ['style', 'css'] },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-      { test: /\.jsx?$/, loaders: ['babel?cacheDirectory'] },
+      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
+      { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.jsx?$/, loaders: ['babel-loader?cacheDirectory'] },
       {
         test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/,
-        loader: 'url?limit=1000&name=images/[name].[ext]'
+        loader: 'url-loader?limit=1000&name=images/[name].[ext]'
       },
       {
         test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-        loader: 'url?limit=1000&name=fonts/[name].[ext]'
+        loader: 'url-loader?limit=1000&name=fonts/[name].[ext]'
       },
       {
         test: require.resolve('jquery-knob'),
-        loader: "imports?require=>false,define=>false,this=>window"
+        loader: "imports-loader?require=>false,define=>false,this=>window"
       },
       {
         test: PATHS.d3,
-        loader: "script"
+        loader: "script-loader"
       },
       {
         test: require.resolve('rickshaw'),
-        loader: "script"
+        loader: "script-loader"
       }
     ]
   }
