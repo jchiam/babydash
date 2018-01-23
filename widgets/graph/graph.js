@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import 'd3';
-import 'rickshaw';
+import Rickshaw from 'rickshaw';
 import {Kitto, Widget} from 'kitto';
 
 import './graph.scss';
