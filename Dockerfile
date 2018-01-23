@@ -1,6 +1,7 @@
-FROM zorbash/kitto
+FROM bitwalker/alpine-elixir-phoenix:latest
 
 ENV MIX_ENV prod
+ENV KITTO_IP 0.0.0.0
 
 RUN mkdir /dashboard
 WORKDIR /dashboard
@@ -18,4 +19,4 @@ RUN mix compile
 
 EXPOSE 4000
 
-CMD MIX_ENV=prod KITTO_IP=0.0.0.0 mix kitto.server
+CMD mix kitto.server
