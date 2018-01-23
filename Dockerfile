@@ -18,4 +18,4 @@ RUN mix compile
 
 EXPOSE 4000
 
-CMD KITTO_IP=0.0.0.0 mix kitto.server
+CMD MIX_ENV=prod KITTO_IP=0.0.0.0 mix kitto.server
