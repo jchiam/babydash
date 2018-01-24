@@ -10,9 +10,7 @@
       <div
         data-widget="Countdown"
         data-title="#beccamingachiam"
-        data-day="6"
-        data-month="4"
-        data-year="2019"
+        data-date="2019-04-06"
       />
     </li>
     <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
