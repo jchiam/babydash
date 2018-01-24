@@ -8,9 +8,7 @@ const PATHS = {
   app: path.join(__dirname, 'assets/javascripts/application.js'),
   widgets: glob.sync('./widgets/**/*.js'),
   build: path.join(__dirname, 'priv/static'),
-  gridster: path.join(__dirname, 'node_modules/gridster/dist'),
-  d3: path.join(__dirname, 'node_modules/d3/d3.min.js'),
-  rickshaw: path.join(__dirname, 'node_modules/rickshaw/rickshaw.js')
+  gridster: path.join(__dirname, 'node_modules/gridster/dist')
 };
 
 process.env.BABEL_ENV = TARGET;
@@ -25,10 +23,7 @@ const common = {
     modules: [
       path.resolve(__dirname, 'node_modules'),
       path.resolve(__dirname, PATHS.gridster)
-    ],
-    alias: {
-      d3: PATHS.d3
-    }
+    ]
   },
   output: {
     path: PATHS.build,
@@ -50,15 +45,7 @@ const common = {
       },
       {
         test: require.resolve('jquery-knob'),
-        loader: "imports-loader?require=>false,define=>false,this=>window"
-      },
-      {
-        test: PATHS.d3,
-        loader: "script-loader"
-      },
-      {
-        test: require.resolve('rickshaw'),
-        loader: "script-loader"
+        loader: 'imports-loader?require=>false,define=>false,this=>window'
       }
     ]
   }
