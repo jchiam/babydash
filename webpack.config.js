@@ -2,6 +2,7 @@ const glob = require('glob');
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -77,8 +78,6 @@ if (TARGET === 'start' || !TARGET) {
 
 // Production Environment
 if (TARGET === 'build') {
-  var CompressionPlugin = require("compression-webpack-plugin");
-
   module.exports = merge(common, {
     plugins: [
       new webpack.optimize.UglifyJsPlugin({
@@ -87,7 +86,7 @@ if (TARGET === 'build') {
           keep_fnames: true
         },
         mangle: {
-         keep_fnames: true
+          keep_fnames: true
         }
       }),
       new CompressionPlugin({
