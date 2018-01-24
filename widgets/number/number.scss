@@ -4,8 +4,10 @@
 $background-color:  #47bbb3;
 $value-color:       #fff;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$title-color:       rgba(255, 255, 255, .7);
+$more-info-color:   rgba(255, 255, 255, .7);
+$updated-at-color:  rgba(0, 0, 0, .3);
+
 
 // ----------------------------------------------------------------------------
 // Widget-number styles
@@ -23,17 +25,17 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .change-rate {
-    font-weight: 500;
-    font-size: 30px;
     color: $value-color;
+    font-size: 30px;
+    font-weight: 500;
   }
 
   .more-info {
-    color: $moreinfo-color;
+    color: $more-info-color;
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: $updated-at-color;
   }
 
 }

@@ -3,7 +3,8 @@
 // ----------------------------------------------------------------------------
 $background-color:  #ec663c;
 
-$title-color:       rgba(255, 255, 255, 0.7);
+$title-color:       rgba(255, 255, 255, .7);
+
 
 // ----------------------------------------------------------------------------
 // Widget-text styles
@@ -13,10 +14,10 @@ $title-color:       rgba(255, 255, 255, 0.7);
   background-color: $background-color;
 
   .title {
+    margin: 10px 0;
     color: $title-color;
     font-size: 52px;
     font-weight: bold;
-    margin: 10px 0;
   }
 
   .stats-container {
@@ -27,13 +28,14 @@ $title-color:       rgba(255, 255, 255, 0.7);
 
   .value {
     flex: 1;
-    text-align: right;
     margin-right: 5px;
+    text-align: right;
   }
 
   .descriptor {
     flex: 1;
-    text-align: left;
     margin-left: 5px;
+    text-align: left;
   }
+
 }

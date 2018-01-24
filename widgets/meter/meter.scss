@@ -3,10 +3,13 @@
 // ----------------------------------------------------------------------------
 $background-color:  #9c4274;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.3);
+$title-color:       rgba(255, 255, 255, .7);
+$more-info-color:   rgba(255, 255, 255, .3);
+$updated-at-color:  rgba(0, 0, 0, .3);
 
 $meter-background:  darken($background-color, 15%);
+$meter-color:       #fff;
+
 
 // ----------------------------------------------------------------------------
 // Widget-meter styles
@@ -15,9 +18,11 @@ $meter-background:  darken($background-color, 15%);
 
   background-color: $background-color;
 
-  input.meter {
-    background-color: $meter-background;
-    color: #fff;
+  input {
+    &.meter {
+      background-color: $meter-background;
+      color: $meter-color;
+    }
   }
 
   .title {
@@ -25,11 +30,12 @@ $meter-background:  darken($background-color, 15%);
   }
 
   .more-info {
-    color: $moreinfo-color;
+    color: $more-info-color;
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: $updated-at-color;
   }
+
 }
 
