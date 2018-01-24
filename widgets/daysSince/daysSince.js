@@ -22,9 +22,13 @@ Widget.mount(class DaysSince extends Widget {
     const dateMoment = moment(date);
     return (
       <div className={className}>
-        <div className="num-days">{days}</div>
-        <span className="heart" role="img" aria-label="heart">❤️</span>
-        <div>{`${dateMoment.date()} - ${dateMoment.month() + 1} - ${dateMoment.year()}`}</div>
+        <div className="container">
+          <div className="num-days">{days}</div>
+          <div className="heart-container">
+            <span className="heart" role="img" aria-label="heart">❤️</span>
+          </div>
+          <div>{`${dateMoment.date()} - ${dateMoment.month() + 1} - ${dateMoment.year()}`}</div>
+        </div>
       </div>
     );
   }
