@@ -1,0 +1,47 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #ec663c;
+
+$title-color:       rgba(255, 255, 255, .7);
+
+
+// ----------------------------------------------------------------------------
+// Widget-days-left styles
+// ----------------------------------------------------------------------------
+.widget-days-left {
+
+  background-color: $background-color;
+
+  .num-days {
+    color: $title-color;
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  .text {
+    font-size: 32px;
+  }
+
+  .strong-container {
+    height: 84px;
+  }
+
+  @keyframes oscillating-arm {
+    0% { left: 15%; }
+    49% { transform: scaleX(1); }
+    50% { left : 60%; transform: scaleX(-1); }
+    99% { transform: scaleX(-1); }
+    100% { left: 15%; tranform: scaleX(1); }
+  }
+
+  .strong {
+    position: absolute;
+    font-size: 80px;
+    animation-name: oscillating-arm;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+}

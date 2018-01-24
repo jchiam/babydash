@@ -19,17 +19,24 @@
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/engagement_ring.jpg?alt=media&token=2da347cc-f2cd-4d60-b46a-d7e3d9c7414b"
       />
     </li>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div
+        class="widget-days-since"
+        data-widget="DaysSince"
+        data-date="2015-04-22"
+      />
+    </li>
     <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
       <div
         data-widget="Image"
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/couple2.jpg?alt=media&token=1e43e044-6963-428a-b53c-c08ec997a8fd"
       />
     </li>
-    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
       <div
-        class="widget-days-since"
-        data-widget="DaysSince"
-        data-date="2015-04-22"
+        class="widget-days-left"
+        data-widget="DaysLeft"
+        data-date="2019-07-01"
       />
     </li>
   </ul>
