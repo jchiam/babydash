@@ -1,15 +1,36 @@
 import React from 'react';
-import {Widget} from 'kitto';
+import { Widget } from 'kitto';
 
 import './clock.scss';
 
 class Clock extends Widget {
+  static padSingleDigit(i) {
+    return i < 10 ? `0${i}` : i;
+  }
+
+  static dateTime() {
+    const today = new Date();
+    const h = today.getHours();
+    const m = Clock.padSingleDigit(today.getMinutes());
+    const s = Clock.padSingleDigit(today.getSeconds());
+
+    return {
+      time: `${h}:${m}:${s}`,
+      date: today.toDateString()
+    };
+  }
+
   constructor(props) {
     super(props);
-    this.state = Clock.dateTime()
+
+    this.state = Clock.dateTime();
     setInterval(this.update.bind(this), 500);
   }
-  update() { this.setState(Clock.dateTime()); }
+
+  update() {
+    this.setState(Clock.dateTime());
+  }
+
   render() {
     return (
       <div className={this.props.className}>
@@ -18,21 +39,7 @@ class Clock extends Widget {
       </div>
     );
   }
-  static formatTime(i) { return i < 10 ? "0" + i : i; }
-  static dateTime() {
-    var today = new Date(),
-        h = today.getHours(),
-        m = today.getMinutes(),
-        s = today.getSeconds(),
-        m = Clock.formatTime(m),
-        s = Clock.formatTime(s);
-
-    return {
-      time: (h + ":" + m + ":" + s),
-      date: today.toDateString(),
-    }
-  }
-};
+}
 
 Widget.mount(Clock);
 export default Clock;

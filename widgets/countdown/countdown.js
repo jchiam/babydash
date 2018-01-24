@@ -1,5 +1,5 @@
 import React from 'react';
-import {Widget} from 'kitto';
+import { Widget } from 'kitto';
 
 import './countdown.scss';
 
@@ -23,7 +23,7 @@ Widget.mount(class Countdown extends Widget {
 
   constructor(props) {
     super(props);
-    
+
     const { day, month, year } = props;
     this.state = { diff: Countdown.diff(new Date(), new Date(`${year}-${month}-${day}`)) };
     setInterval(this.update.bind(this), 500);
@@ -42,13 +42,12 @@ Widget.mount(class Countdown extends Widget {
     return (
       <div className="stats-container">
         <div className="value">{value.toLocaleString()}</div>
-        <div className="descriptor">{value === 1 ? stats.substring(0, stats.length-1) : stats}</div>
+        <div className="descriptor">{value === 1 ? stats.substring(0, stats.length - 1) : stats}</div>
       </div>
     );
   }
 
   render() {
-    const { weeks, days, minutes, seconds } = this.state.diff;
     return (
       <div className={this.props.className}>
         {this.renderStats('years')}

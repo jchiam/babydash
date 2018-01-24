@@ -1,5 +1,5 @@
 import React from 'react';
-import {Widget} from 'kitto';
+import { Widget } from 'kitto';
 
 import './image.scss';
 
@@ -12,11 +12,9 @@ class Image extends Widget {
     };
   }
   render() {
-    return (
-      <div style={this.image()} className={this.props.className}></div>
-    );
+    return <div style={this.image()} className={this.props.className} />;
   }
-};
+}
 
 Widget.mount(Image);
 export default Image;
