@@ -3,7 +3,7 @@ import { Widget } from 'kitto';
 
 import './text.scss';
 
-class Text extends Widget {
+Widget.mount(class Text extends Widget {
   render() {
     const { status } = this.state;
     const { className } = this.props;
@@ -16,7 +16,4 @@ class Text extends Widget {
       </div>
     );
   }
-}
-
-Widget.mount(Text);
-export default Text;
+});

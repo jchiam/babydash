@@ -3,7 +3,7 @@ import { Widget } from 'kitto';
 
 import './clock.scss';
 
-class Clock extends Widget {
+Widget.mount(class Clock extends Widget {
   static padSingleDigit(i) {
     return i < 10 ? `0${i}` : i;
   }
@@ -39,7 +39,4 @@ class Clock extends Widget {
       </div>
     );
   }
-}
-
-Widget.mount(Clock);
-export default Clock;
+});

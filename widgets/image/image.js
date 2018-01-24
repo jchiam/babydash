@@ -5,7 +5,7 @@ import './image.scss';
 
 const placeholder = '/assets/images/placeholder.png';
 
-class Image extends Widget {
+Widget.mount(class Image extends Widget {
   image() {
     return {
       backgroundImage: `url(${this.props.image || placeholder})`
@@ -14,7 +14,4 @@ class Image extends Widget {
   render() {
     return <div style={this.image()} className={this.props.className} />;
   }
-}
-
-Widget.mount(Image);
-export default Image;
+});
