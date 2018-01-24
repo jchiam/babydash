@@ -2,14 +2,12 @@
   <ul>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div
-        class=""
         data-widget="Image"
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/couple.jpg?alt=media&token=513f366d-0549-4076-bca0-73b1f0d8dbbb"
       />
     </li>
     <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
       <div
-        class="widget-countdown"
         data-widget="Countdown"
         data-title="#beccamingachiam"
         data-day="6"
@@ -19,14 +17,12 @@
     </li>
     <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
       <div
-        class=""
         data-widget="Image"
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/engagement_ring.jpg?alt=media&token=2da347cc-f2cd-4d60-b46a-d7e3d9c7414b"
       />
     </li>
     <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
       <div
-        class=""
         data-widget="Image"
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/couple2.jpg?alt=media&token=1e43e044-6963-428a-b53c-c08ec997a8fd"
       />

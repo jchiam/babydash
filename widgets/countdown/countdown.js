@@ -48,15 +48,16 @@ Widget.mount(class Countdown extends Widget {
   }
 
   render() {
+    const { className, title } = this.props;
     return (
-      <div className={this.props.className}>
+      <div className={className}>
         {this.renderStats('years')}
         {this.renderStats('months')}
         {this.renderStats('weeks')}
         {this.renderStats('days')}
         {this.renderStats('minutes')}
         {this.renderStats('seconds')}
-        <div className="title">{this.props.title}</div>
+        <div className="title">{title}</div>
       </div>
     );
   }
