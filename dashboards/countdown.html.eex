@@ -31,5 +31,12 @@
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/couple2.jpg?alt=media&token=1e43e044-6963-428a-b53c-c08ec997a8fd"
       />
     </li>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div
+        class="widget-days-since"
+        data-widget="DaysSince"
+        data-date="2015-04-22"
+      />
+    </li>
   </ul>
 </div>

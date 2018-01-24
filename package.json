@@ -45,6 +45,7 @@
     "jquery": "3.3.1",
     "jquery-knob": "1.2.11",
     "kitto": "file:deps/kitto",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
