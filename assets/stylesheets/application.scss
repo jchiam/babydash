@@ -1,4 +1,4 @@
-@import "~jquery.gridster.css";
+@import '~jquery.gridster.css';
 @import '~font-awesome/css/font-awesome.css';
 
 // ----------------------------------------------------------------------------
@@ -15,6 +15,7 @@ $background-danger-color-1: #e82711;
 $background-danger-color-2: #9b2d23;
 $text-danger-color: #fff;
 
+// sass-lint:disable no-vendor-prefixes
 @-webkit-keyframes status-warning-background {
   0%   { background-color: $background-warning-color-1; }
   50%  { background-color: $background-warning-color-2; }
@@ -25,16 +26,18 @@ $text-danger-color: #fff;
   50%  { background-color: $background-danger-color-2; }
   100% { background-color: $background-danger-color-1; }
 }
-@mixin animation($animation-name, $duration, $function, $animation-iteration-count:""){
+@mixin animation($animation-name, $duration, $function, $animation-iteration-count: '') {
   -webkit-animation:  $animation-name $duration $function #{$animation-iteration-count};
   -moz-animation:     $animation-name $duration $function #{$animation-iteration-count};
   -ms-animation:      $animation-name $duration $function #{$animation-iteration-count};
 }
+// sass-lint:enable no-vendor-prefixes
 
 // ----------------------------------------------------------------------------
 // Base styles
 // ----------------------------------------------------------------------------
 html {
+  // sass-lint:disable-block no-vendor-prefixes
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -43,12 +46,13 @@ html {
 body {
   margin: 0;
   background-color: $background-color;
-  font-size: 20px;
   color: $text-color;
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -59,11 +63,12 @@ a {
 
 img {
   border: 0;
-  -ms-interpolation-mode: bicubic;
   vertical-align: middle;
+  -ms-interpolation-mode: bicubic;  // sass-lint:disable-line no-vendor-prefixes
 }
 
-img, object {
+img,
+object {
   max-width: 100%;
 }
 
@@ -72,134 +77,157 @@ iframe {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
 }
 
 td {
   vertical-align: middle;
 }
 
-ul, ol {
-  padding: 0;
+ul,
+ol {
   margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3, h4, h5, p {
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
+  padding: 0;
 }
+
 h1 {
   margin-bottom: 12px;
   text-align: center;
   font-size: 30px;
   font-weight: 400;
 }
+
 h2 {
   text-transform: uppercase;
+  color: $text-color;
   font-size: 76px;
   font-weight: 700;
-  color: $text-color;
 }
+
 h3 {
+  color: $text-color;
   font-size: 25px;
   font-weight: 600;
-  color: $text-color;
 }
 
 // ----------------------------------------------------------------------------
 // Base widget styles
 // ----------------------------------------------------------------------------
 .gridster {
-  margin: 0px auto;
+  margin: 0 auto;
+
+  ul {
+    list-style: none;
+  }
 }
 
 .icon-background {
-  width: 100%!important;
-  height: 100%;
   position: absolute;
-  left: 0;
   top: 0;
-  opacity: 0.1;
-  font-size: 275px;
-  text-align: center;
+  left: 0;
+  opacity: .1;
   margin-top: 82px;
+  width: 100% !important;   // sass-lint:disable-line no-important
+  height: 100%;
+  text-align: center;
+  font-size: 275px;
 }
 
 .list-nostyle {
   list-style: none;
 }
 
-.gridster ul {
-  list-style: none;
-}
-
 .gs-w {
-  width: 100%;
   display: table;
   cursor: pointer;
+  width: 100%;
 }
 
 .widget {
   display: table-cell;
   padding: 25px 12px;
-  box-sizing: border-box;
-  text-align: center;
   width: 100%;
   vertical-align: middle;
-}
+  text-align: center;
+  box-sizing: border-box;
 
-.widget.status-warning {
-  background-color: $background-warning-color-1;
-  @include animation(status-warning-background, 2s, ease, infinite);
+  .status-warning {
+    @include animation(status-warning-background, 2s, ease, infinite);
 
-  .icon-warning-sign {
-    display: inline-block;
+    background-color: $background-warning-color-1;
+
+    .icon-warning-sign {
+      display: inline-block;
+    }
+
+    .title,
+    .more-info {
+      color: $text-warning-color;
+    }
   }
 
-  .title, .more-info {
-    color: $text-warning-color;
-  }
-}
+  .status-danger {
+    @include animation(status-danger-background, 2s, ease, infinite);
 
-.widget.status-danger {
-  color: $text-danger-color;
-  background-color: $background-danger-color-1;
-  @include animation(status-danger-background, 2s, ease, infinite);
-
-  .icon-warning-sign {
-    display: inline-block;
-  }
-
-  .title, .more-info {
+    background-color: $background-danger-color-1;
     color: $text-danger-color;
+
+    .icon-warning-sign {
+      display: inline-block;
+    }
+
+    .title,
+    .more-info {
+      color: $text-danger-color;
+    }
   }
 }
 
 .more-info {
-  font-size: 15px;
   position: absolute;
+  right: 0;
   bottom: 32px;
   left: 0;
-  right: 0;
+  font-size: 15px;
 }
 
 .updated-at {
-  font-size: 15px;
   position: absolute;
+  right: 0;
   bottom: 12px;
   left: 0;
-  right: 0;
+  font-size: 15px;
 }
 
-#container {
+#container {          // sass-lint:disable-line no-ids
   padding-top: 5px;
 }
 
 // ----------------------------------------------------------------------------
 // Clearfix
 // ----------------------------------------------------------------------------
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix {
+  zoom: 1;
+
+  ::before,
+  ::after {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    content: '\0020';
+  }
+
+  ::after { clear: both; }
+}

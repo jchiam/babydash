@@ -1,8 +1,8 @@
+import $ from 'jquery';
+import { Kitto } from 'kitto';
+
 import '../stylesheets/application.scss';
 
-import $ from 'jquery';
-import {Kitto} from 'kitto';
-
-window.jQuery = window.$ = $;
+window.jQuery = window.$ = $; // eslint-disable-line no-undef, no-multi-assign
 
 Kitto.start();
