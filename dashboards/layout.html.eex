@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Dashboard</title>
+    <title>BabyDash</title>
 
     <meta charset="utf-8"/>
-    <meta name="description" content="Dashboard build with Kitto">
+    <meta property="og:title" content="BabyDash" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/couple2.jpg?alt=media&token=1e43e044-6963-428a-b53c-c08ec997a8fd" />
+    <meta property="og:description" content="Dashboard built by the baby for the baby.">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="/assets/favicon.ico">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/favicon.ico?alt=media&token=b6270bf6-6ba3-4ba1-b6e7-e5f8a9ebf632">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
   </head>
 
   <body>
