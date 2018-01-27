@@ -9,6 +9,7 @@ services:
       - VIRTUAL_PORT=4000
       - LETSENCRYPT_HOST=babydash.jonchiam.com
       - LETSENCRYPT_EMAIL=jczjchiam@gmail.com
+      - FIREBASE_URL=${FIREBASE_URL}
     container_name: babydash
     ports:
       - "4000:4000"

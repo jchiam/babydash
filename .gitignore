@@ -4,6 +4,7 @@
 priv
 erl_crash.dump
 *.ez
+config/.env
 
 # Numerous always-ignore extensions
 *.diff

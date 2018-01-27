@@ -1,2 +1,2 @@
 build-deploy:
-	docker-compose up --build -d
+	./config/.env && docker-compose up --build -d
