@@ -21,5 +21,12 @@
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/merry_shy.png?alt=media&token=98a83a3a-6c41-450a-97ce-d9695b78a857"
       />
     </li>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div
+        data-widget="Score"
+        data-source="pokemon_battle"
+        data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/bulbasaur.jpg?alt=media&token=28f7b111-86e5-4da0-bead-9cbac7f8f4b6"
+      />
+    </li>
   </ul>
 </div>
