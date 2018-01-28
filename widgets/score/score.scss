@@ -1,0 +1,62 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #ec663c;
+
+$content-bg-color:  white;
+$title-color:       #ec663c;
+$updated-at-color:  black;
+
+
+// ----------------------------------------------------------------------------
+// Widget-score styles
+// ----------------------------------------------------------------------------
+.widget-score {
+
+  background-color: $background-color;
+  background-position: center;
+  background-size: cover;
+
+  thead {
+    .becca,
+    .jon {
+      width: 50%;
+    }
+
+    .becca {
+      text-align: right;
+      padding-right: 25px
+    }
+
+    .jon {
+      text-align: left;
+      padding-left: 40px;
+    }
+  }
+
+  td {
+    color: $title-color;
+  }
+
+  .contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $content-bg-color;
+    opacity: .7;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  .updated-at {
+    color: $updated-at-color;
+    margin-bottom: 30px;
+  }
+
+}
+
