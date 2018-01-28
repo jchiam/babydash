@@ -2,9 +2,23 @@
   <ul>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div
+        data-widget="Image"
+        data-contain="true"
+        data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/milk_flower.png?alt=media&token=3771c016-455b-46e8-bf3d-5da5f9fc5525"
+      />
+    </li>
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+      <div
         data-widget="Score"
         data-source="table_tennis"
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/table_tennis.jpg?alt=media&token=22a0a868-52ed-421a-82e8-b28c379e19ea"
+      />
+    </li>
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div
+        data-widget="Image"
+        data-contain="true"
+        data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/merry_shy.png?alt=media&token=98a83a3a-6c41-450a-97ce-d9695b78a857"
       />
     </li>
   </ul>

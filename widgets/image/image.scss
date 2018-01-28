@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
+$background-color:  #ec663c;
 
 
 // ----------------------------------------------------------------------------
@@ -8,7 +9,16 @@
 // ----------------------------------------------------------------------------
 .widget-image {
 
+  background-color: $background-color;
   background-position: center;
   background-size: cover;
+
+}
+
+.widget-image-contain {
+
+  @extend .widget-image;
+  background-size: contain;
+  background-repeat: no-repeat;
 
 }
