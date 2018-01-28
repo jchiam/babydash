@@ -17,25 +17,15 @@ $updated-at-color:  black;
   background-position: center;
   background-size: cover;
 
-  thead {
+  table {
+    td {
+      color: $title-color;
+    }
+
     .becca,
     .jon {
-      width: 50%;
+      width: 40%;
     }
-
-    .becca {
-      text-align: right;
-      padding-right: 25px
-    }
-
-    .jon {
-      text-align: left;
-      padding-left: 40px;
-    }
-  }
-
-  td {
-    color: $title-color;
   }
 
   .contents {

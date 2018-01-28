@@ -9,6 +9,19 @@ Widget.mount(class Score extends Widget {
     return JSON.parse(json);
   }
 
+  imageStyle() {
+    const { image, imagecontain } = this.props;
+    const style = {};
+    if (image) {
+      style.backgroundImage = `url(${image})`;
+      if (imagecontain === 'true') {
+        style.backgroundSize = 'contain';
+        style.backgroundRepeat = 'no-repeat';
+      }
+    }
+    return style;
+  }
+
   renderScores() {
     const { stdout } = this.state;
     if (stdout) {
@@ -18,14 +31,15 @@ Widget.mount(class Score extends Widget {
           <thead>
             <tr>
               <td className="becca">Becca</td>
+              <td />
               <td className="jon">Jon</td>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td colSpan={2} className="title">
-                {`${becca} : ${jon}`}
-              </td>
+            <tr className="title">
+              <td className="becca">{becca}</td>
+              <td>:</td>
+              <td className="jon">{jon}</td>
             </tr>
           </tbody>
         </table>
@@ -35,9 +49,9 @@ Widget.mount(class Score extends Widget {
   }
 
   render() {
-    const { image, className } = this.props;
+    const { className } = this.props;
     return (
-      <div style={image ? { backgroundImage: `url(${image})` } : null} className={className}>
+      <div style={this.imageStyle()} className={className}>
         <div className="contents">
           {this.renderScores()}
           <p className="updated-at">{this.updatedAt(this.state.updated_at)}</p>
