@@ -10,7 +10,7 @@ config :kitto,
   ip: {:system, "KITTO_IP"},
   port: 4000,
   otp_app: :babydash,
-  default_dashboard: "countdown"
+  default_dashboard: "rotator?dashboards=countdown,scores&interval=10"
 
 # Use reload_code?: false to disable code reloading in development environment
 # Read More: https://github.com/kittoframework/kitto/wiki/Code-Reloading
