@@ -3,6 +3,8 @@ FROM bitwalker/alpine-elixir-phoenix:latest
 ENV MIX_ENV prod
 ENV KITTO_IP 0.0.0.0
 
+RUN apk add --no-cache curl
+
 RUN mkdir /dashboard
 WORKDIR /dashboard
 
