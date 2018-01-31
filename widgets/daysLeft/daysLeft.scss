@@ -28,20 +28,21 @@ $title-color:       rgba(255, 255, 255, .7);
   }
 
   @keyframes oscillating-arm {
+    // sass-lint:disable-block one-declaration-per-line
     0% { left: 15%; }
     49% { transform: scaleX(1); }
-    50% { left : 60%; transform: scaleX(-1); }
+    50% { left: 60%; transform: scaleX(-1); }
     99% { transform: scaleX(-1); }
-    100% { left: 15%; tranform: scaleX(1); }
+    100% { left: 15%; transform: scaleX(1); }
   }
 
   .strong {
     position: absolute;
-    font-size: 80px;
     animation-name: oscillating-arm;
     animation-duration: 4s;
-    animation-iteration-count: infinite;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-size: 80px;
   }
 
 }

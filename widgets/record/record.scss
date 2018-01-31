@@ -3,9 +3,9 @@
 // ----------------------------------------------------------------------------
 $background-color:  #ec663c;
 
-$content-bg-color:  white;
+$content-bg-color:  #fff;
 $title-color:       #ec663c;
-$updated-at-color:  black;
+$updated-at-color:  #000;
 
 
 // ----------------------------------------------------------------------------
@@ -25,12 +25,12 @@ $updated-at-color:  black;
 
   .contents {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: $content-bg-color;
+    justify-content: center;
     opacity: .7;
-    height: 100%;
+    background-color: $content-bg-color;
     padding: 10px;
+    height: 100%;
   }
 
   .title {
@@ -39,8 +39,8 @@ $updated-at-color:  black;
   }
 
   .updated-at {
-    color: $updated-at-color;
     margin-bottom: 30px;
+    color: $updated-at-color;
   }
 
 }

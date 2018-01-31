@@ -17,8 +17,8 @@ $background-color:  #ec663c;
 
 .widget-image-contain {
 
-  @extend .widget-image;
-  background-size: contain;
+  @extend .widget-image;        // sass-lint:disable-line placeholder-in-extend
   background-repeat: no-repeat;
+  background-size: contain;
 
 }
