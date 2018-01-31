@@ -42,6 +42,13 @@
         data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/bulbasaur.jpg?alt=media&token=28f7b111-86e5-4da0-bead-9cbac7f8f4b6"
       />
     </li>
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div
+        data-widget="Record"
+        data-source="basketball_arcade"
+        data-image="https://firebasestorage.googleapis.com/v0/b/babydash-40fe2.appspot.com/o/basketball_arcade.jpg?alt=media&token=69ecaf58-2bf3-4029-a965-95d400252b31"
+      />
+    </li>
     <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
       <div
         data-widget="Image"
