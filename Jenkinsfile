@@ -7,7 +7,7 @@ pipeline {
         stage('Build & Deploy') {
             steps {
                 slackSend teamDomain: 'jonbecca', channel: '#surpriseee', color: 'good', message: "Build <$BUILD_URL|$JOB_NAME-$BUILD_NUMBER> started!", tokenCredentialId: 'jonbecca-slack-token'
-                sh 'make build-deploy'
+                sh '. config/.env && make build-deploy'
             }
         }
     }
