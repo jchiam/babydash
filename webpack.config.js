@@ -33,20 +33,54 @@ const common = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
-      { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.jsx?$/, loaders: ['babel-loader?cacheDirectory&compact=false'] },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.jsx?$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            compact: false
+          }
+        }
+      },
       {
         test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/,
-        loader: 'url-loader?limit=1000&name=images/[name].[ext]'
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 1000,
+            name: 'images/[name].[ext]'
+          }
+        }
       },
       {
         test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-        loader: 'url-loader?limit=1000&name=fonts/[name].[ext]'
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 1000,
+            name: 'fonts/[name].[ext]'
+          }
+        }
       },
       {
         test: require.resolve('jquery-knob'),
-        loader: 'imports-loader?require=>false,define=>false,this=>window'
+        use: {
+          loader: 'imports-loader',
+          options: {
+            require: false,
+            define: false,
+            this: 'window'
+          }
+        }
       }
     ]
   }
