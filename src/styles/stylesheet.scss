@@ -1,6 +1,10 @@
-@import '/node_modules/react-grid-layout/css/styles.css';
-@import '/node_modules/react-resizable/css/styles.css';
+$background-color: #222;
+$text-color: #fff;
 
 body {
   margin: 0;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }

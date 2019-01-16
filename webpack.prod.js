@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -18,10 +19,29 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader', 'import-glob-loader']
-        })
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader', 'import-glob-loader']
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'image/svg+xml',
+            name: '[name]-[hash].[ext]',
+            esModule: false
+          }
+        }
+      },
+      {
+        test: /\.(gif|png|jpg|jpeg|eot)(\?[a-z0-9]+)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash].[ext]',
+            esModule: false
+          }
+        }
       }
     ]
   },
@@ -47,11 +67,11 @@ module.exports = merge(common, {
       template: 'src/index.ejs',
       chunks: ['main', 'react', 'vendor']
     }),
-    new ExtractTextPlugin({
-      filename: 'style-[chunkhash].css',
-      allChunks: false
+    new MiniCssExtractPlugin({
+      filename: '[name]-[hash].css',
+      chunkFilename: '[id].css'
     }),
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin()
     // new BundleAnalyzerPlugin()
   ]
 });

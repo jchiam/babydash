@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
+  entry: './src/index.tsx',
   context: __dirname,
   output: {
     filename: '[name].bundle.js',
@@ -8,16 +11,29 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js'],
     modules: [
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, 'node_modules')
-    ]
+    ],
+    alias: {
+      notice: path.resolve(__dirname, 'notice.js')
+    }
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true
+          }
+        }]
+      },
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
       }
@@ -43,5 +59,11 @@ module.exports = {
         }
       }
     }
+  },
+  plugins: [new ForkTsCheckerWebpackPlugin({
+    tsconfig: path.resolve(__dirname, 'tsconfig.json')
+  })],
+  externals: {
+    notice: true
   }
 };
