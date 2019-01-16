@@ -1,38 +1,15 @@
-/_build
-/cover
-/deps
-priv
-erl_crash.dump
-*.ez
-config/.env
+# dependencies
+node_modules
 
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
-*.sass-cache
+# testing
+coverage
 
-# OS or Editor files/dirs
+# production
+dist
+.firebase
+
+# misc
 .DS_Store
-.cache
-.project
-.settings
-.tmproj
-nbproject
-Thumbs.db
-
-# NPM packages
-node_modules/
-
-# Compiled Assets
-public/*
-!public/assets
-public/assets/*
-!public/assets/favicon.*
-!public/assets/images
+.env
+npm-debug.log
+firebase-debug.log
