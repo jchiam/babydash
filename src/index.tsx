@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 
 import Dashboard from 'Dashboard';
 
-import 'styles/stylesheet.scss';
+import 'styles/app.scss';
 
 if (module.hot) {
   ReactDOM.render(

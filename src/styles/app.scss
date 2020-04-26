@@ -1,3 +1,5 @@
+@import 'styles/widgets/image';
+
 $background-color: #222;
 $text-color: #fff;
 
@@ -7,4 +9,8 @@ body {
   color: $text-color;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
+}
+
+.card {
+  height: 250px;
 }
