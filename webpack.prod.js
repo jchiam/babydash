@@ -13,7 +13,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name]-[chunkhash].bundle.js',
+    filename: '[name]-[chunkhash].bundle.js'
   },
   module: {
     rules: [
