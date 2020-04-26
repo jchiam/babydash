@@ -22,6 +22,10 @@ module.exports = merge(common, {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader', 'import-glob-loader']
       },
       {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'import-glob-loader']
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         use: {
           loader: 'url-loader',
