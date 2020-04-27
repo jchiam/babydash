@@ -3,6 +3,7 @@ import React from 'react';
 import ImageWidget from 'widgets/ImageWidget';
 import ClockWidget from 'widgets/ClockWidget';
 import DaysSinceWidget from 'widgets/DaysSinceWidget';
+import DaysLeftWidget from 'widgets/DaysLeftWidget';
 
 import 'materialize-css/dist/css/materialize.css';
 
@@ -28,6 +29,9 @@ const Dashboard = () => {
           <div className="row">
             <div className="col s4">
               <DaysSinceWidget date={new Date()} />
+            </div>
+            <div className="col s4 offset-s4">
+              <DaysLeftWidget date={new Date()} />
             </div>
           </div>
         </div>
