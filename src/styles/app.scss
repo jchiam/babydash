@@ -1,5 +1,6 @@
 @import 'styles/widgets/image';
 @import 'styles/widgets/clock';
+@import 'styles/widgets/daysSince';
 
 $background-color: #222;
 $text-color: #fff;
@@ -14,4 +15,5 @@ body {
 
 .card {
   height: 250px;
+  width: 250px;
 }

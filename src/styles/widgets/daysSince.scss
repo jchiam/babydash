@@ -1,0 +1,29 @@
+.days-since-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .num-days {
+    margin-bottom: -50px;
+    color: rgba(255, 255, 255, .7);
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  .heart-container {
+    margin-bottom: -20px;
+    height: 84px;
+  }
+
+  @keyframes pounding-heart {
+    from { font-size: 80px; }
+    to { font-size: 84px; }
+  }
+
+  .heart {
+    animation-name: pounding-heart;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+  }
+}
