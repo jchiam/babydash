@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { lightFormat } from 'date-fns';
 
 type DateTime = {
   time: string;
@@ -6,16 +7,10 @@ type DateTime = {
 };
 
 const Clock = () => {
-  const padSingleDigit = (i: number) => i < 10 ? `0${i}` : i;
-
   const currentDateTime = (): DateTime => {
     const today = new Date();
-    const h = today.getHours();
-    const m = padSingleDigit(today.getMinutes());
-    const s = padSingleDigit(today.getSeconds());
-
     return {
-      time: `${h}:${m}:${s}`,
+      time: lightFormat(today, 'hh:mm:ss a'),
       date: today.toDateString()
     };
   };
