@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { lightFormat } from 'date-fns';
+import { format, lightFormat } from 'date-fns';
 import classNames from 'classnames';
 
 interface ClockProps {
@@ -18,7 +18,7 @@ const Clock = (props: ClockProps) => {
     const today = new Date();
     return {
       time: lightFormat(today, 'hh:mm:ss a'),
-      date: today.toDateString()
+      date: format(today, 'dd MMM yyyy iii')
     };
   };
 
