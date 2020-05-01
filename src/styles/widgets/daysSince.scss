@@ -12,13 +12,16 @@
   }
 
   .heart-container {
-    margin-bottom: -20px;
-    height: 84px;
+    height: 110px;
+  }
+
+  .date {
+    margin-top: 30px;
   }
 
   @keyframes pounding-heart {
-    from { font-size: 80px; }
-    to { font-size: 84px; }
+    from { font-size: 110px; }
+    to { font-size: 120px; }
   }
 
   .heart {

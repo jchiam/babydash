@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { parseISO } from 'date-fns';
 
 import ImageWidget from 'widgets/ImageWidget';
 import ClockWidget from 'widgets/ClockWidget';
@@ -8,7 +9,18 @@ import DaysLeftWidget from 'widgets/DaysLeftWidget';
 import 'materialize-css/dist/css/materialize.css';
 
 const Dashboard = () => {
-  const title = <h1>Babydash</h1>;
+  const [anniversary, updateAnniversary] = useState(null as Date | null);
+
+  useEffect(() => {
+    db.ref('anniversary').once('value')
+      .then(snapshot => {
+        if (snapshot.val()) {
+          updateAnniversary(parseISO(snapshot.val()));
+        }
+      });
+  }, []);
+
+  const title = <h1>#beccameachiam</h1>;
   return (
     <>
       <div className="container">
@@ -26,9 +38,10 @@ const Dashboard = () => {
             />
           </div>
           <div className="row">
-            <div className="col s4">
-              <DaysSinceWidget date={new Date()} />
-            </div>
+            <DaysSinceWidget
+              className="col s4"
+              date={anniversary || new Date()}
+            />
             <div className="col s4 offset-s4">
               <DaysLeftWidget date={new Date()} />
             </div>
