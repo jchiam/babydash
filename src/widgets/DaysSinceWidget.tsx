@@ -21,7 +21,7 @@ const DaysSince = (props: DaysSinceProps) => {
 
   return (
     <div className={classNames({ 'days-since-widget card orange z-depth-0': true, [className || '']: true })}>
-      <div className="num-days">{days}</div>
+      <div className="num-days">{days || '-'}</div>
       <div className="heart-container">
         <span className="heart" role="img" aria-label="heart">❤️</span>
       </div>
