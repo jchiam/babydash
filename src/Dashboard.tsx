@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { parseISO } from 'date-fns';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 import ImageWidget from 'widgets/ImageWidget';
 import ClockWidget from 'widgets/ClockWidget';
@@ -7,6 +9,11 @@ import DaysSinceWidget from 'widgets/DaysSinceWidget';
 import DaysLeftWidget from 'widgets/DaysLeftWidget';
 
 import 'materialize-css/dist/css/materialize.css';
+
+const app = firebase.initializeApp({
+  databaseURL: process.env.FIREBASE_DB_URL
+}, 'Babydash');
+const db = firebase.database(app);
 
 const Dashboard = () => {
   const [anniversary, updateAnniversary] = useState(null as Date | null);

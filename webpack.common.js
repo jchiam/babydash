@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
@@ -60,10 +61,15 @@ module.exports = {
       }
     }
   },
-  plugins: [new ForkTsCheckerWebpackPlugin({
-    tsconfig: path.resolve(__dirname, 'tsconfig.json')
-  })],
-  externals: {
-    notice: true
+  plugins: [
+    new Dotenv({
+      safe: true
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      tsconfig: path.resolve(__dirname, 'tsconfig.json')
+    })
+  ],
+  node: {
+    fs: 'empty'
   }
 };
